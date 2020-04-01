@@ -9,15 +9,17 @@ const getCurrentDate = () => {
 
 const getCurrentTime = () => {
   const time = new Date()
-  const hour = time.getHours()
+  // const hour = time.getHours()
+  const hr = time.getHours()
   const mins = time.getMinutes()
   const sec = time.getSeconds()
 
+  const hour = hr > 12 ? `${hr - 12}` : `${hr}`
   const minutes = mins < 10 ? `0${mins}` : `${mins}`
   const seconds = sec < 10 ? `0${sec}` : `${sec}`
 
 
-  return `${hour}:${minutes}.${seconds}`
+  return `${hour}:${minutes}:${seconds}`
 }
 
 
