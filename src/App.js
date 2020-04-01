@@ -22,12 +22,19 @@ const getCurrentTime = () => {
   return `${hour}:${minutes}:${seconds}`
 }
 
+const getDateTime = () => {
+  const date = getCurrentDate()
+  const time = getCurrentTime()
+  return `${date} @ ${time}`
+}
+
 
 
 const App = () => {
   return (
     <div className="App">
-      <Intro date={getCurrentDate()} time={getCurrentTime()} />
+      <Intro dateTime={getDateTime()} />
+      {/* <Intro date={getCurrentDate()} time={getCurrentTime()} /> */}
     </div>
   );
 }
